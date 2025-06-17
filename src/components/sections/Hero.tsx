@@ -162,10 +162,12 @@ const Hero: React.FC = () => {
                 className="relative z-10 h-full w-full rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl"
               >
                 <img
-                  src="Assests\profile3.png"
-                  alt="Sameer Mahato"
-                  className="h-full w-full object-cover"
-                />
+  src="https://i.postimg.cc/25jwpH2L/IMG-4749-fotor-bg-remover-20250419231830.png"
+  alt="Sameer Mahato"
+  className="h-full w-full object-cover"
+                 />
+
+
                 <motion.div
                   animate={{
                     opacity: [0, 0.1, 0],
