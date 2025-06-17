@@ -1,21 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, ArrowDown } from "lucide-react";
 import { Link } from "react-scroll";
 import { personalInfo } from "../../data/personal";
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-black text-white overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl px-6">
-        {/* Social Icons */}
-        <div className="flex space-x-4 mt-6 md:mt-0">
-          <a
-            href="https://linkedin.com/in/your-linkedin-username" // Replace with your actual LinkedIn link
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors"
-          >
+    <section>
+      <div>
+        <motion.div>
+          <a className="p-2 rounded-full bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors">
             <Linkedin size={20} />
           </a>
 
@@ -25,73 +19,64 @@ const Hero = () => {
           >
             <Mail size={20} />
           </a>
-        </div>
-
-        {/* Image Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="md:w-1/2 mt-12 md:mt-0 flex justify-center"
-        >
-          <div className="relative h-80 w-80 md:h-96 md:w-96">
-            {/* Background Blur Glow */}
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full opacity-70 blur-3xl"
-            />
-
-            {/* Rotating Ring */}
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20"
-            />
-
-            {/* Profile Image */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="relative z-10 h-full w-full rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl"
-            >
-              <img
-                src="https://i.postimg.cc/25jwpH2L/IMG-4749-fotor-bg-remover-20250419231830.png"
-                alt="Sameer Mahato"
-                className="h-full w-full object-cover"
-              />
-
-              {/* Subtle Glow Overlay */}
-              <motion.div
-                animate={{
-                  opacity: [0, 0.1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-                className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500"
-              />
-            </motion.div>
-          </div>
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="md:w-1/2 mt-12 md:mt-0 flex justify-center"
+      >
+        <div className="relative h-80 w-80 md:h-96 md:w-96">
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+              rotate: [0, 5, -5, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full opacity-70 blur-3xl"
+          />
+          <motion.div
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute inset-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20"
+          />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="relative z-10 h-full w-full rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl"
+          >
+            <img
+              src="https://i.postimg.cc/25jwpH2L/IMG-4749-fotor-bg-remover-20250419231830.png"
+              alt="Sameer Mahato"
+              className="h-full w-full object-cover"
+            />
+            <motion.div
+              animate={{
+                opacity: [0, 0.1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500"
+            />
+          </motion.div>
+        </div>
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -108,11 +93,7 @@ const Hero = () => {
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
+            transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
           >
             <ArrowDown size={24} className="text-gray-400" />
           </motion.div>
